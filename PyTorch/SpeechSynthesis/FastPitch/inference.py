@@ -311,7 +311,7 @@ def main():
 
     log_fpath = args.log_file or str(Path(args.output, 'nvlog_infer.json'))
     DLLogger.init(backends=[
-        JSONStreamBackend(Verbosity.DEFAULT, log_fpath, append=True),
+        JSONStreamBackend(Verbosity.DEFAULT, log_fpath),
         JSONStreamBackend(Verbosity.DEFAULT, unique_log_fpath(log_fpath)),
         StdOutBackend(Verbosity.VERBOSE, metric_format=stdout_metric_format)
     ])
